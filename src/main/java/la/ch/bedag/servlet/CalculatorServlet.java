@@ -43,7 +43,7 @@ public class CalculatorServlet extends HttpServlet {
                             <button type='submit' name='type' value='multiplication'>Multiplication</button>
                             <button type='submit' name='type' value='divide'>Divide</button>
                         </form>
-                        <label>result: </label>
+                        <label>Result: </label>
                     </body>
                 </html>
                 """);
@@ -53,17 +53,27 @@ public class CalculatorServlet extends HttpServlet {
         String type = request.getParameter("type").toUpperCase();
 
         Calculator calculator;
-        if (type.equals(Type.ADDITION.toString())) {
-            calculator = new Addition(x, y);
-        } else if (type.equals(Type.SUBTRACTION.toString())) {
-            calculator = new Subtraction(x, y);
-        } else if (type.equals(Type.MULTIPLICATION.toString())) {
-            calculator = new Multiplication(x, y);
-        } else {
-            calculator = new Divide(x, y);
+        switch (Type.valueOf(type)) {
+            case ADDITION -> {
+                calculator = new Addition(x, y);
+                out.println(calculator.calc());
+                LOGGER.log(Level.INFO, "Added");
+            }
+            case SUBTRACTION -> {
+                calculator = new Subtraction(x, y);
+                out.println(calculator.calc());
+                LOGGER.log(Level.INFO, "Subtracted");
+            }
+            case MULTIPLICATION -> {
+                calculator = new Multiplication(x, y);
+                out.println(calculator.calc());
+                LOGGER.log(Level.INFO, "Multiplied");
+            }
+            case DIVIDE -> {
+                calculator = new Divide(x, y);
+                out.println(calculator.calc());
+                LOGGER.log(Level.INFO, "Divided");
+            }
         }
-
-        out.println(calculator.calc());
-        LOGGER.log(Level.INFO, "Get titel");
     }
 }
