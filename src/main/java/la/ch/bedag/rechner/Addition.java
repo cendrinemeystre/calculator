@@ -3,7 +3,7 @@ package la.ch.bedag.rechner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class Addition extends Rechner {
+public class Addition extends Calculator {
     private final Logger LOGGER = Logger.getLogger(Addition.class.getName());
 
     private final Type type = Type.ADDITION;

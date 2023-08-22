@@ -3,7 +3,7 @@ package la.ch.bedag.rechner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class Divide extends Rechner {
+public class Divide extends Calculator {
     private final Logger LOGGER = Logger.getLogger(Divide.class.getName());
 
     private final Type type = Type.DIVIDE;

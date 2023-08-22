@@ -1,10 +1,10 @@
 package la.ch.bedag.rechner;
 
-public abstract class Rechner {
+public abstract class Calculator {
     protected long x;
     protected long y;
 
-    protected Rechner(long x, long y) {
+    protected Calculator(long x, long y) {
         this.x = x;
         this.y = y;
     }

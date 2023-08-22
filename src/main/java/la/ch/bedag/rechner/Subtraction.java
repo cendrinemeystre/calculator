@@ -3,7 +3,7 @@ package la.ch.bedag.rechner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class Subtraction extends Rechner {
+public class Subtraction extends Calculator {
     private final Logger LOGGER = Logger.getLogger(Subtraction.class.getName());
 
     private final Type type = Type.SUBTRACTION;
