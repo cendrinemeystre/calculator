@@ -1,6 +1,7 @@
 package la.ch.bedag.servlet;
 
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -16,7 +17,7 @@ import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-//@WebServlet(name = "WebRechner", value = "/rechner")
+@WebServlet(name = "Calculator", value = "/calculator")
 public class CalculatorServlet extends HttpServlet {
     private final Logger LOGGER = Logger.getLogger(CalculatorServlet.class.getName());
 
